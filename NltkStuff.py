@@ -40,13 +40,15 @@ def minor_menu():
 def read_text():
     import nltk
     from nltk.corpus import PlaintextCorpusReader
-   # corpus_root= '/Users/user/desktop/test'
-    file_name= input('Enter the directory of file: ')
-    corpus_root = file_name
-    tokenizer = nltk.RegexpTokenizer('[^.!?]+')
-    object = nltk.corpus.PlaintextCorpusReader(corpus_root, '.*\.txt', sent_tokenizer=tokenizer)
-    raw = object.words()
+
+    # Open From File GUI
+    from tkinter.filedialog import askopenfilename
+    file_name = askopenfilename()
+    f = open(file_name)
     
+    # Read from file
+    raw=f.read()
+ 
     #Passing value by reference
     print_tokenizer(raw)
 
