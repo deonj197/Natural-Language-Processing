@@ -45,9 +45,10 @@ def read_text():
     corpus_root = file_name
     tokenizer = nltk.RegexpTokenizer('[^.!?]+')
     object = nltk.corpus.PlaintextCorpusReader(corpus_root, '.*\.txt', sent_tokenizer=tokenizer)
-    text = object.words()
-    print(text)
-    return "1"
+    raw = object.words()
+    
+    #Passing value by reference
+    print_tokenizer(raw)
 
 #Read from an online page    
 def read_from_web():   
@@ -64,6 +65,18 @@ def read_from_web():
     raw= BeautifulSoup(html).get_text()
     tokens = word_tokenize(raw)
 
+    #Pass a variable by reference
+    print_tokenizer(raw)
+
+#Lexical diversity of text, not used yet   
+def lexical_diversity(my_text_data):
+    word_count = len(my_text_data)
+    vocab_size = len(set(my_text_data))
+    diversity_score = vocab_size / word_count
+    return diversity_score
+
+
+def print_tokenizer(raw):
     # Using the tokenizer library and assigning it to a variable
     # This is where the text is converted and assigned to a token
     custom_sent_tokenizer = PunktSentenceTokenizer(raw)
@@ -78,19 +91,6 @@ def read_from_web():
             
     except Exception as e:
         print(str(e))
-    
-    #print(tokens)
-    #text= raw[:len(raw)]
-    #print(text)
-    #return "1"
-
-#Lexical diversity of text, not used yet   
-def lexical_diversity(my_text_data):
-    word_count = len(my_text_data)
-    vocab_size = len(set(my_text_data))
-    diversity_score = vocab_size / word_count
-    return diversity_score
-
 
 #This is somewhat our "main", call menu, and await for input
 user_input= ""
