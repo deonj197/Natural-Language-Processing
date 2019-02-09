@@ -1,6 +1,8 @@
 import nltk, re, pprint
 from nltk import word_tokenize
 from urllib import request
+from bs4 import BeautifulSoup
+from nltk.tokenize import PunktSentenceTokenizer
 import os
 
 #Menu to help user navigate through program.
@@ -52,6 +54,8 @@ def read_from_web():
     #url= "http://www-personal.umd.umich.edu/~bmaxim/"
     url_name=input('Enter the web URL: ')
     response= request.urlopen(url_name)
+
+    # Open the website and read the content inside the html page
     html = request.urlopen(url_name).read().decode('utf8')
     raw= response.read().decode('utf8')
 
@@ -59,11 +63,26 @@ def read_from_web():
     from bs4 import BeautifulSoup
     raw= BeautifulSoup(html).get_text()
     tokens = word_tokenize(raw)
+
+    # Using the tokenizer library and assigning it to a variable
+    # This is where the text is converted and assigned to a token
+    custom_sent_tokenizer = PunktSentenceTokenizer(raw)
+    tokenized = custom_sent_tokenizer.tokenize(raw)
+
+    try:
+        # For loop that will take each word and tokenize it
+        for i in tokenized:
+            words = nltk.word_tokenize(i)
+            tagged = nltk.pos_tag(words)
+            print(tagged)
+            
+    except Exception as e:
+        print(str(e))
     
     #print(tokens)
-    text= raw[:len(raw)]
-    print(text)
-    return "1"
+    #text= raw[:len(raw)]
+    #print(text)
+    #return "1"
 
 #Lexical diversity of text, not used yet   
 def lexical_diversity(my_text_data):
