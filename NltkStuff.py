@@ -3,6 +3,7 @@ from nltk import word_tokenize
 from urllib import request
 from bs4 import BeautifulSoup
 from nltk.tokenize import PunktSentenceTokenizer
+from tkinter import *
 import os
 
 #Menu to help user navigate through program.
@@ -43,12 +44,18 @@ def read_text():
 
     # Open From File GUI
     from tkinter.filedialog import askopenfilename
+
+    # This will hide the tk window and exit out of it once program is terminated
+    root = Tk()
+    root.withdraw()
+
+    # Opens windows explorer
     file_name = askopenfilename()
     f = open(file_name)
     
     # Read from file
     raw=f.read()
- 
+    
     #Passing value by reference
     print_tokenizer(raw)
 
