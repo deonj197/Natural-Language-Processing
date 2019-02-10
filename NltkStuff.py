@@ -73,7 +73,7 @@ def read_from_web():
     from bs4 import BeautifulSoup
     raw= BeautifulSoup(html).get_text()
     tokens = word_tokenize(raw)
-
+    
     #Pass a variable by reference
     print_tokenizer(raw)
 
@@ -84,22 +84,29 @@ def lexical_diversity(my_text_data):
     diversity_score = vocab_size / word_count
     return diversity_score
 
-
 def print_tokenizer(raw):
     # Using the tokenizer library and assigning it to a variable
     # This is where the text is converted and assigned to a token
     custom_sent_tokenizer = PunktSentenceTokenizer(raw)
     tokenized = custom_sent_tokenizer.tokenize(raw)
 
+#******************* THIS WILL NEED TO BE MODIFIED ***********************
+    # Creates an empty file
+    new_file = open("myfile.txt", "w+")
+    
     try:
         # For loop that will take each word and tokenize it
         for i in tokenized:
             words = nltk.word_tokenize(i)
             tagged = nltk.pos_tag(words)
+            new_file.write(str(tagged)) # This will write contents to the file
             print(tagged)
-            
+    
     except Exception as e:
         print(str(e))
+
+    new_file.close()
+#**************************************************************************
 
 #This is somewhat our "main", call menu, and await for input
 user_input= ""
@@ -117,20 +124,3 @@ while (user_input!="0"):
        # print("Wrong input,please select a valid choice!")
         Main_Menu()
         user_input=input("Select an option: ")
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
