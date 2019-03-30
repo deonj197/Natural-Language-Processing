@@ -4,6 +4,7 @@ from urllib import request
 from bs4 import BeautifulSoup
 from nltk.tokenize import PunktSentenceTokenizer
 from tkinter import *
+from database import database
 import os
 
 #Menu to help user navigate through program.
@@ -108,19 +109,31 @@ def print_tokenizer(raw):
     new_file.close()
 #**************************************************************************
 
-#This is somewhat our "main", call menu, and await for input
-user_input= ""
-while (user_input!="0"):
-    Main_Menu()
-    user_input=input("Select an option: ")
-    if(user_input == "1"):
-        if(minor_menu()=="000"):
-            print("Wrong Choice!")
-           # break
-        
-    elif(user_input == "0"):
-        print("THANK YOU FOR USING UMD ANALYTICS")
-    else:
-       # print("Wrong input,please select a valid choice!")
+
+def main():
+    """
+    Run this to test your database connection.
+    
+    test = database.collection(u'sentences').get()
+    for doc in test:
+        print(u'{} => {}'.format(doc.id, doc.to_dict()))
+    """
+    #This is somewhat our "main", call menu, and await for input
+    user_input= ""
+    while (user_input!="0"):
         Main_Menu()
         user_input=input("Select an option: ")
+        if(user_input == "1"):
+            if(minor_menu()=="000"):
+                print("Wrong Choice!")
+               # break
+
+        elif(user_input == "0"):
+            print("THANK YOU FOR USING UMD ANALYTICS")
+        else:
+           # print("Wrong input,please select a valid choice!")
+            Main_Menu()
+            user_input=input("Select an option: ")
+
+if __name__ == "__main__":
+    main()
