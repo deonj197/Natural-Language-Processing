@@ -5,7 +5,8 @@ from bs4 import BeautifulSoup
 from nltk.tokenize import PunktSentenceTokenizer, sent_tokenize
 from database import database
 from nltk.corpus import gutenberg
-from NLTK_Features.ReadPrint_Text import read_from_book, read_text, read_from_web, print_tokenizer
+from NLTK_Features.Read_Text import *
+from NLTK_Features.Print_Text import *
 import os
 from tkinter import *
 
