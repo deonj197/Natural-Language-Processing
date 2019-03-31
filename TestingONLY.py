@@ -7,7 +7,7 @@ from tkinter import *
 from database import database
 import os
 from sentence import Sentence
-
+from word import Word
 
 #Menu to help user navigate through program.
 def Main_Menu():
@@ -58,10 +58,6 @@ def read_text():
     
     # Read from file
     raw=f.read()
-    #Add the text sentence to the database collection
-    text = Sentence(raw)
-    ref = database.collection(u'sentences').add(text.to_dict())
-    
 
     #Passing value by reference
     print_tokenizer(raw)
@@ -80,8 +76,6 @@ def read_from_web():
     from bs4 import BeautifulSoup
     raw= BeautifulSoup(html).get_text()
     tokens = word_tokenize(raw)
-
-    database.collection("sentences").document(ref).collection("words").document(tokens)
     
     #Pass a variable by reference
     print_tokenizer(raw)
@@ -98,7 +92,7 @@ def print_tokenizer(raw):
     # This is where the text is converted and assigned to a token
     custom_sent_tokenizer = PunktSentenceTokenizer(raw)
     tokenized = custom_sent_tokenizer.tokenize(raw)
-    
+
 
     
 #******************* THIS WILL NEED TO BE MODIFIED ***********************
@@ -112,7 +106,18 @@ def print_tokenizer(raw):
             tagged = nltk.pos_tag(words)
             new_file.write(str(tagged)) # This will write contents to the file
             print(tagged)
-    
+
+            # Add the text sentence to the database collection
+            # Iterate through the words and store them as children.
+            words = []
+            for pair in tagged:
+                word = Word(pair[0], pair[1])
+                word_dict = word.to_dict()
+                words.append(word_dict)
+
+            text = Sentence(raw, words=words)
+            database.collection(u'sentences').add(text.to_dict())
+
     except Exception as e:
         print(str(e))
     
