@@ -1,7 +1,7 @@
-class Sentence(object):
-    def __init__(self, text, words):
+class Word(object):
+    def __init__(self, text, tag):
         self.text = text
-        self.words = words
+        self.tag = tag
     @staticmethod
     def from_dict(source):
         return
@@ -10,5 +10,5 @@ class Sentence(object):
     def to_dict(self):
         return {
             u'text': self.text,
-            u'words': self.words
+            u'tag': self.tag
         }
