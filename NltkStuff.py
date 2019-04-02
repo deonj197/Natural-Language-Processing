@@ -31,6 +31,7 @@ def minor_menu():
     print("2. Access Web")
     print("3. From String")
     print("4. Sentence/WORD/TAG")
+    print("5. Sentiment Analysis")
     
     user_choice= input("Enter choice: ")
 
@@ -48,6 +49,9 @@ def minor_menu():
 
     elif(user_choice =="4"):
         sentece_word_tag()
+
+    elif(user_choice =="5"):
+        sentiment_analysis()
         
     else:
         #this will be the code if user enters invalid answer, it will take them to main menu
