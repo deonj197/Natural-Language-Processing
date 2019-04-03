@@ -3,7 +3,7 @@ from nltk import word_tokenize
 from urllib import request
 from bs4 import BeautifulSoup
 from nltk.tokenize import PunktSentenceTokenizer, sent_tokenize
-from database import database
+from database import *
 from nltk.corpus import gutenberg
 import os
 from tkinter import *
@@ -25,6 +25,7 @@ def print_tokenizer(raw):
             tagged = nltk.pos_tag(words)
             new_file.write(str(tagged)) # This will write contents to the file
             print(tagged)
+            store(raw, tagged)
     
     except Exception as e:
         print(str(e))
