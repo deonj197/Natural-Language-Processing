@@ -29,6 +29,9 @@ def minor_menu():
     #TODO add while loop
     print("1. Access local")
     print("2. Access Web")
+    print("3. From String")
+    print("4. Sentence/WORD/TAG")
+    print("5. Sentiment Analysis")
     
     user_choice= input("Enter choice: ")
 
@@ -39,6 +42,17 @@ def minor_menu():
     elif(user_choice=="2"):
         if(read_from_web()=="1"):
             print("SUCCESSS!")
+            
+    elif(user_choice=="3"):
+        if(read_from_book() == "3"):
+            print("SUCCESS!")
+
+    elif(user_choice =="4"):
+        sentece_word_tag()
+
+    elif(user_choice =="5"):
+        sentiment_analysis()
+
         
     else:
         #this will be the code if user enters invalid answer, it will take them to main menu
