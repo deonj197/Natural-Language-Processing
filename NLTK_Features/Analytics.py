@@ -1,6 +1,6 @@
 from nltk.probability import FreqDist
 from NLTK_Features.Print_Text import *
-
+from database import database
 
 def sentece_word_tag():
 
