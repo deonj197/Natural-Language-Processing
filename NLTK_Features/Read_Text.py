@@ -1,11 +1,9 @@
-import nltk, re, pprint
+import nltk
 from nltk import word_tokenize
 from urllib import request
 from bs4 import BeautifulSoup
 from nltk.tokenize import PunktSentenceTokenizer, sent_tokenize
 from database import database
-from nltk.corpus import gutenberg
-import os
 from NLTK_Features.Print_Text import *
 
 from tkinter import *

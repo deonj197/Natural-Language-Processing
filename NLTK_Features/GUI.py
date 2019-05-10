@@ -1,18 +1,4 @@
-import nltk, re, pprint
-from nltk import word_tokenize
-from urllib import request
-from bs4 import BeautifulSoup
-from nltk.tokenize import PunktSentenceTokenizer, sent_tokenize
-from database import database
-from nltk.corpus import gutenberg
-from NLTK_Features.Read_Text import *
-from NLTK_Features.Print_Text import *
-from NLTK_Features.Analytics import *
 from NLTK_Features.Sentiment import *
-from tkinter import *
-import os
-from tkinter import *
-from nltk.probability import FreqDist
 
 def Stats_Menu_Gui(window2):
     window2.withdraw()
