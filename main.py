@@ -9,6 +9,7 @@ from NLTK_Features.Read_Text import *
 from NLTK_Features.Print_Text import *
 from NLTK_Features.Analytics import *
 from NLTK_Features.Sentiment import *
+from NLTK_Features.GUI import *
 import os
 from tkinter import *
 from nltk.probability import FreqDist
@@ -64,8 +65,11 @@ def minor_menu():
 ##    vocab_size = len(set(my_text_data))
 ##    diversity_score = vocab_size / word_count
 ##    return diversity_score
-
 def main():
+    #First Menu
+    #demo()
+    #createWidgets()
+    gui_menu()
     """
     Run this to test your database connection.
     

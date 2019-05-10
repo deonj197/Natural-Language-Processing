@@ -35,33 +35,73 @@ def read_text():
     
     # Read from file
     raw=f.read()
-    
-    #Passing value by reference (goes to print_tokenizer) and passes the data there as well
-    print_tokenizer(raw)
+    # So maybe in here have a new window that displays file
+    # With option of saving it or just viewing it
+    import tkinter
+    window2= Tk()
+    window2.geometry("900x500")
+    window2.title("Read Local File")
+
+    Results = Label(window2, text = raw)
+    Results.grid(row = 1, column = 1)
     
     #Passing values by references (goes to print sentence) and passes data there
     #print_sentence(raw)
+    #print_tokenizer(raw)
+
+    tokens = nltk.word_tokenize(raw)
+    print(tokens)   
 
 #Read from an online page    
-def read_from_web():   
-    #url= "http://www-personal.umd.umich.edu/~bmaxim/"
-    url_name=input('Enter the web URL: ')
-    response= request.urlopen(url_name)
-
-    # Open the website and read the content inside the html page
-    html = request.urlopen(url_name).read().decode('utf8')
-    raw= response.read().decode('utf8')
-
-    #STRIP OUT HTML
-    from bs4 import BeautifulSoup
-    raw= BeautifulSoup(html).get_text()
-    tokens = word_tokenize(raw)
-
-# Not working, since theres no periods, it uses 
-    #sents = sent_tokenize(raw)
-    #print(sents)
+def read_from_web():
     
-    #Pass a variable by reference
-    print_tokenizer(raw)
+    #url= "http://www-personal.umd.umich.edu/~bmaxim/"
+
+    import tkinter
+    window3= Tk()
+    window3.geometry("900x500")
+    window3.title("Read From Web ")
+
+    #Info label
+    label = Label(window3, text="Enter URLLL: ")
+    label.grid(column = 0, row = 0)
+
+    #User Input
+    txt = Entry(window3,width=50)
+    txt.grid(column = 1, row =0)
+    txt.focus()
+
+    def strip():
+        #url_name=input('Enter the web URL: ')
+        url_name = txt.get()
+        response= request.urlopen(url_name)
+
+        # Open the website and read the content inside the html page
+        html = request.urlopen(url_name).read().decode('utf8')
+        raw= response.read().decode('utf8')
+
+        #STRIP OUT HTML
+        from bs4 import BeautifulSoup
+        raw= BeautifulSoup(html).get_text()
+        tokens = word_tokenize(raw)
+
+        #SCROLLTEXT widget
+        import tkinter.scrolledtext as tkst
+        scrolTxt = tkst.ScrolledText(window3)
+        scrolTxt.grid(column=1,row=10)
+        scrolTxt.insert(tkinter.INSERT,raw)
+        #
+    
+        #TOKENIZE TEXT
+        #Have a second scrollText?? or open in new page?? try new options
+        print_tokenizer(raw)
+
+    #Button to perform url retrieval
+    option1Button = Button(window3, text= "GET WEB PAGE", bg="light blue", fg="black", command = strip)
+    option1Button.grid(column=10, row =0)
+
+    #,width=40,height=10
+    
+    
 
 
