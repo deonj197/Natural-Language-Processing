@@ -1,5 +1,6 @@
 from NLTK_Features.GUI import *
 
+
 #Lexical diversity of text, not used yet   
 ##def lexical_diversity(my_text_data):
 ##    word_count = len(my_text_data)
