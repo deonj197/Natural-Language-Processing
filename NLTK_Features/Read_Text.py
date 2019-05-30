@@ -61,7 +61,7 @@ def read_from_web():
     window3.title("Read From Web ")
 
     #Info label
-    label = Label(window3, text="Enter URLLL: ")
+    label = Label(window3, text="Enter Web Page URL: ")
     label.grid(column = 0, row = 0)
 
     #User Input
@@ -96,6 +96,7 @@ def read_from_web():
 
     #Button to perform url retrieval
     option1Button = Button(window3, text= "GET WEB PAGE", bg="light blue", fg="black", command = strip)
+    option1Button.config(height = 1, width = 20)
     option1Button.grid(column=10, row =0)
 
     #,width=40,height=10

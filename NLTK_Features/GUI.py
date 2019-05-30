@@ -17,6 +17,7 @@ def Stats_Menu_Gui(window2):
                       
     #LFrequency Distribution
     option1Button = Button(window3, text= "1. Frequency Distribution", bg="light blue", fg="black", command = local)
+    option1Button.config(height = 1, width = 20)
     option1Button.grid(pady=15)
 
     def local2():
@@ -24,22 +25,27 @@ def Stats_Menu_Gui(window2):
         
     #Stop Words
     option2Button = Button(window3, text= "2. Stop Words", bg="light blue", fg="black", command = local2)
+    option2Button.config(height = 1, width = 20)
     option2Button.grid(pady=15)
 
     def local3():
         stemming()
         
     option3Button = Button(window3, text = "3. Stemming", bg = "light blue", fg = "black", command = local3)
+    option3Button.config(height = 1, width = 20)
     option3Button.grid(pady = 15)
 
     def local4():
-        sentiment_analysis()
+        sentiment_an
+        alysis()
     option4Button = Button(window3, text = '4. Sentiment Analysis', bg = 'light blue', fg = 'black', command = local4)
+    option4Button.config(height = 1, width = 20)
     option4Button.grid(pady = 15)
 
     def local5():
         sentece_word_tag()
     option5Button = Button(window3, text = '5. Sentence- Word -Tag', bg = 'light blue', fg = 'black', command = local5)
+    option5Button.config(height = 1, width = 20)
     option5Button.grid(pady = 15)        
         
     def quite():
@@ -70,6 +76,7 @@ def Minor_Menu_Gui(window):
             
         #Local file
         option1Button = Button(window2, text= "1. Access Local", bg="light blue", fg="black", command = local)
+        option1Button.config(height = 1, width = 20)
         option1Button.grid(pady=15)
 
         def local2():
@@ -77,10 +84,12 @@ def Minor_Menu_Gui(window):
             
         #WEB
         option2Button = Button(window2, text= "2. Access Web", bg="light blue", fg="black", command = local2)
+        option2Button.config(height = 1, width = 20)
         option2Button.grid(pady=15)
             
         #ANALYTICS MENU
         option3Button = Button(window2, text= "3. Access Analytics Menu", bg="light blue", fg="black",command=  lambda: Stats_Menu_Gui(window2))
+        option3Button.config(height = 1, width = 20)
         option3Button.grid(pady=15)
 
         def quite():
