@@ -16,7 +16,7 @@ def Stats_Menu_Gui(window2):
            freq_Dist()
                       
     #LFrequency Distribution
-    option1Button = Button(window3, text= "1. Frequency Distribution", bg="light blue", fg="black", command = local)
+    option1Button = Button(window3, text= "Frequency Distribution", bg="light blue", fg="black", command = local)
     option1Button.config(height = 1, width = 20)
     option1Button.grid(pady=15)
 
@@ -24,27 +24,27 @@ def Stats_Menu_Gui(window2):
         stop_words()
         
     #Stop Words
-    option2Button = Button(window3, text= "2. Stop Words", bg="light blue", fg="black", command = local2)
+    option2Button = Button(window3, text= "Stop Words", bg="light blue", fg="black", command = local2)
     option2Button.config(height = 1, width = 20)
     option2Button.grid(pady=15)
 
     def local3():
         stemming()
         
-    option3Button = Button(window3, text = "3. Stemming", bg = "light blue", fg = "black", command = local3)
+    option3Button = Button(window3, text = "Stemming", bg = "light blue", fg = "black", command = local3)
     option3Button.config(height = 1, width = 20)
     option3Button.grid(pady = 15)
 
     def local4():
         sentiment_an
         alysis()
-    option4Button = Button(window3, text = '4. Sentiment Analysis', bg = 'light blue', fg = 'black', command = local4)
+    option4Button = Button(window3, text = 'Sentiment Analysis', bg = 'light blue', fg = 'black', command = local4)
     option4Button.config(height = 1, width = 20)
     option4Button.grid(pady = 15)
 
     def local5():
         sentece_word_tag()
-    option5Button = Button(window3, text = '5. Sentence- Word -Tag', bg = 'light blue', fg = 'black', command = local5)
+    option5Button = Button(window3, text = 'Sentence- Word -Tag', bg = 'light blue', fg = 'black', command = local5)
     option5Button.config(height = 1, width = 20)
     option5Button.grid(pady = 15)        
         
@@ -75,7 +75,7 @@ def Minor_Menu_Gui(window):
             
             
         #Local file
-        option1Button = Button(window2, text= "1. Access Local", bg="light blue", fg="black", command = local)
+        option1Button = Button(window2, text= "Access Local", bg="light blue", fg="black", command = local)
         option1Button.config(height = 1, width = 20)
         option1Button.grid(pady=15)
 
@@ -83,12 +83,12 @@ def Minor_Menu_Gui(window):
             read_from_web()
             
         #WEB
-        option2Button = Button(window2, text= "2. Access Web", bg="light blue", fg="black", command = local2)
+        option2Button = Button(window2, text= "Access Web", bg="light blue", fg="black", command = local2)
         option2Button.config(height = 1, width = 20)
         option2Button.grid(pady=15)
             
         #ANALYTICS MENU
-        option3Button = Button(window2, text= "3. Access Analytics Menu", bg="light blue", fg="black",command=  lambda: Stats_Menu_Gui(window2))
+        option3Button = Button(window2, text= "Access Analytics Menu", bg="light blue", fg="black",command=  lambda: Stats_Menu_Gui(window2))
         option3Button.config(height = 1, width = 20)
         option3Button.grid(pady=15)
 
@@ -121,7 +121,7 @@ def gui_menu():
 
     #Access File button
     #opens other Minor Menu GUI, we pass the current GUI (window), so as to open it later on through hide & show 
-    option1Button = Button(window, text= "1. Access Corpora", bg="light blue", fg="black", command=  lambda: Minor_Menu_Gui(window))
+    option1Button = Button(window, text= "Access Corpora", bg="light blue", fg="black", command=  lambda: Minor_Menu_Gui(window))
     option1Button.grid(pady=15)
 
     #Message Box (confirm exit)
@@ -139,7 +139,7 @@ def gui_menu():
        os.system("taskkill /f /im pythonw.exe")
     
     #Exit Program Button
-    option2Button = Button(window, text= "0. Exit Program     ", bg="light blue", fg="black",command=message_Box)
+    option2Button = Button(window, text= "Exit Program     ", bg="light blue", fg="black",command=message_Box)
     option2Button.grid(pady=15)    
     
     #start window frame
