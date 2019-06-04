@@ -1,14 +1,50 @@
 from nltk.probability import FreqDist
 from NLTK_Features.Print_Text import *
 from database import database
+    
+from tkinter import ttk
+import tkinter as tk
+from tkinter.scrolledtext import ScrolledText
 
 def sentece_word_tag():
+    #jsut have a function that can remember the name of the file, instead of always
+    #opening the file
 
+    import tkinter
+    window= Tk()
+    window.geometry("900x500")
+    window.title("WORDS TAGGING FUNCTION")
+
+    nb = ttk.Notebook(window)
+
+    page1 = ttk.Frame(nb)
+    page2 = ttk.Frame(nb)
+    page3 = ttk.Frame(nb)
+    
+    nb.add(page1, text = 'Sentence tokenization')
+    nb.add(page2, text= 'Word tokenization')
+    nb.add(page3, text='WORDS TAGGING')
+
+    nb.pack(expand=1, fill="both")
+   
+    monty = ttk.LabelFrame(page1, text=' ORIGINAL SENTENCE ')
+    monty.grid(column=0, row=0, padx=8, pady=4)
+
+    monty2 = ttk.LabelFrame(page2, text=' WORD　TOKENIZATION')
+    monty2.grid(column=0, row=0, padx=8, pady=4)
+
+    monty3 = ttk.LabelFrame(page3, text=' WORDS TAGGING')
+    monty3.grid(column=0, row=0, padx=8, pady=4)
+
+    
     import nltk
     from nltk.corpus import PlaintextCorpusReader
+    
 
     # Open From File GUI
     from tkinter.filedialog import askopenfilename
+
+    import tkinter.scrolledtext as tkst
 
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
@@ -24,12 +60,38 @@ def sentece_word_tag():
     print("-----------------Sentence tokenization------------------- \n")
     sentences = nltk.sent_tokenize(raw)
     print(sentences)
+     #ORIGINAL TEXT
+    print ("TOTAL WORDS COUNTS =", len([word for s in sentences for word in s]), "\n")
+    print("ORIGINAL Sentence:",sentences)
+    totL = ("TOTAL WORDS COUNTS =", len([word for s in sentences for word in s]), "\n")
+    scrolTxt2 = tkst.ScrolledText(monty, width=100, height=30, wrap=tk.WORD)
+    #scrolTxt.grid(column=0, row=3, sticky='WE', columnspan=3)
+    scrolTxt2.grid(column=1,row=3)
+    scrolTxt2.insert(tkinter.INSERT,totL)
+    scrolTxt2.insert(tkinter.INSERT,sentences)
+
+    #WORD TOKENIZED VERESION
+    # print ("TOTAL # OF WORDS =", len([word for s in filtered_sent for word in s]))
+    #print("FILETERED  Sentence:",filtered_sent)
     print("\n-----------------Word tokenization----------------------------------\n")
-    sentences = [nltk.word_tokenize(sent) for sent in sentences]
-    print(sentences)
+    wordTokenized = [nltk.word_tokenize(sent) for sent in sentences]
+    print (wordTokenized)
+    totL3=("WORDS TOKENIZED =", len([word for s in wordTokenized for word in s]), "\n") 
+    scrolTxt3 = tkst.ScrolledText(monty2, width=100, height=30, wrap=tk.WORD)
+    scrolTxt3.grid(column=1,row=3)
+    scrolTxt3.insert(tkinter.INSERT,totL3, '\n')
+    scrolTxt3.insert(tkinter.INSERT,wordTokenized)
+
+
     print("\n----------------WORDS + TAG-----------------------------------\n")
-    sentences = [nltk.pos_tag(sent) for sent in sentences]
-    print(sentences)   
+    wordTag = [nltk.pos_tag(sent) for sent in wordTokenized]
+    print(wordTag )
+    totL3=("WORDS TAGGING =", len([word for s in wordTag  for word in s]), "\n") 
+    scrolTxt3 = tkst.ScrolledText(monty3, width=100, height=30, wrap=tk.WORD)
+    scrolTxt3.grid(column=1,row=3)
+    scrolTxt3.insert(tkinter.INSERT,totL3)
+    scrolTxt3.insert(tkinter.INSERT,wordTag )
+           
 
     #Stats_Menu()
 
@@ -62,8 +124,39 @@ def Stats_Menu():
 #for example driving, drove, would reduce to drive   
 def stemming():
     
+    import tkinter
+    window= Tk()
+    window.geometry("900x500")
+    window.title("STEMMING FUNCTION")
+
+    nb = ttk.Notebook(window)
+
+    page1 = ttk.Frame(nb)
+    page2 = ttk.Frame(nb)
+
+    nb.add(page1, text='ORGINAL Sentencs')
+    nb.add(page2, text='Stemmed Sentence')
+ 
+    nb.pack(expand=1, fill="both")
+   
+    monty = ttk.LabelFrame(page1, text='Orignal')
+    monty.grid(column=0, row=0, padx=8, pady=4)
+
+    monty2 = ttk.LabelFrame(page2, text=' Stemmed ')
+    monty2.grid(column=0, row=0, padx=8, pady=4)
+    
+    
     from nltk.stem import PorterStemmer
     from nltk.tokenize import sent_tokenize, word_tokenize
+
+    #SCROLLTEXT widget
+    import tkinter.scrolledtext as tkst
+    #scrolTxt = tkst.ScrolledText(window4)
+    #scrolTxt.grid(column=1,row=10)
+    #scrolTxt.insert(tkinter.INSERT,stop_words)
+
+
+
 
     #Open file
     from nltk.corpus import PlaintextCorpusReader
@@ -86,14 +179,36 @@ def stemming():
     ps = PorterStemmer()
     stemmed_words=[]
     for w in sentences:
-        
         stemmed_words.append(ps.stem(w))
                              
-    print("ORGINAL Sentencs:",sentences)
-    print("Stemmed Sentence:",stemmed_words)
+    #print("ORIGINAL Sentencs:",sentences)
+    #print("Stemmed Sentence:",stemmed_words)
+
+    #ORIGINAL TEXT
+    print ("TOTAL WORDS COUNT = ", len([word for s in sentences for word in s]), "\n")
+    print("ORIGINAL Sentence:",sentences ,'\n')
+    totL = ("TOTAL WORDS COUNTS = ", len([word for s in sentences for word in s]), "\n")
+
+    scrolTxt2 = tkst.ScrolledText(monty, width=100, height=30, wrap=tk.WORD)
+    #scrolTxt.grid(column=0, row=3, sticky='WE', columnspan=3)
+    scrolTxt2.grid(column=1,row=3)
+    scrolTxt2.insert(tkinter.INSERT,totL)
+    scrolTxt2.insert(tkinter.INSERT,sentences)
+
+    #STEMMED VERESION
+    print ("TOTAL # OF WORDS =", len([word for s in stemmed_words for word in s]))
+    print("STEMMED Sentence:",stemmed_words)
+
+    totL3=("TOTAL WORDS COUNTS =", len([word for s in stemmed_words for word in s]), "\n") 
+    scrolTxt3 = tkst.ScrolledText(monty2, width=100, height=30, wrap=tk.WORD)
+    scrolTxt3.grid(column=1,row=3)
+    scrolTxt3.insert(tkinter.INSERT,totL3)
+    scrolTxt3.insert(tkinter.INSERT,stemmed_words)
+    
 
 #Remove stop words (in english stop words, are words that connect words,
 #but alone give no significant meaning to a sentece
+
     
 from tkinter import ttk
 import tkinter as tk
@@ -134,7 +249,7 @@ def stop_words():
     monty4.grid(column=0, row=0, padx=8, pady=4)
 
     from nltk.corpus import stopwords
-    stop_words=set(stopwords.words("english"))
+   # stop_words=set(stopwords.words("english"))
 
     #SCROLLTEXT widget
     import tkinter.scrolledtext as tkst

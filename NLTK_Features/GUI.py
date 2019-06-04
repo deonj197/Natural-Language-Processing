@@ -36,15 +36,14 @@ def Stats_Menu_Gui(window2):
     option3Button.grid(pady = 15)
 
     def local4():
-        sentiment_an
-        alysis()
+        sentiment_analysis()
     option4Button = Button(window3, text = 'Sentiment Analysis', bg = 'light blue', fg = 'black', command = local4)
     option4Button.config(height = 1, width = 20)
     option4Button.grid(pady = 15)
 
     def local5():
         sentece_word_tag()
-    option5Button = Button(window3, text = 'Sentence- Word -Tag', bg = 'light blue', fg = 'black', command = local5)
+    option5Button = Button(window3, text = 'Word Tagging', bg = 'light blue', fg = 'black', command = local5)
     option5Button.config(height = 1, width = 20)
     option5Button.grid(pady = 15)        
         
