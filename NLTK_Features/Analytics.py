@@ -7,7 +7,7 @@ import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
 
 def sentece_word_tag():
-    #jsut have a function that can remember the name of the file, instead of always
+    #just have a function that can remember the name of the file, instead of always
     #opening the file
 
     import tkinter
@@ -155,9 +155,6 @@ def stemming():
     #scrolTxt.grid(column=1,row=10)
     #scrolTxt.insert(tkinter.INSERT,stop_words)
 
-
-
-
     #Open file
     from nltk.corpus import PlaintextCorpusReader
 
@@ -195,7 +192,7 @@ def stemming():
     scrolTxt2.insert(tkinter.INSERT,totL)
     scrolTxt2.insert(tkinter.INSERT,sentences)
 
-    #STEMMED VERESION
+    #STEMMED VERSION
     print ("TOTAL # OF WORDS =", len([word for s in stemmed_words for word in s]))
     print("STEMMED Sentence:",stemmed_words)
 
@@ -205,17 +202,71 @@ def stemming():
     scrolTxt3.insert(tkinter.INSERT,totL3)
     scrolTxt3.insert(tkinter.INSERT,stemmed_words)
     
+#Open file
+from nltk.corpus import PlaintextCorpusReader
+# Open From File GUI
+from tkinter.filedialog import askopenfilename
 
 #Remove stop words (in english stop words, are words that connect words,
 #but alone give no significant meaning to a sentece
-
-    
 from tkinter import ttk
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
+import tkinter.scrolledtext as tkst
+import nltk
+from nltk.corpus import wordnet
+def Synonym_analysis():
+    import tkinter
+    window5= Tk()
+    window5.geometry("900x500")
+    window5.title("Synonym Analysis")
+
+    # String variable in textbox
+    variable = StringVar()
+    
+    nb = ttk.Notebook(window5)
+    page1 = ttk.Frame(nb)
+    nb.add(page1, text='Synonyms')
+    nb.pack(expand=1, fill="both")
+    #monty = ttk.LabelFrame(page1, text=' List ')
+    monty = LabelFrame(window5, text=" List ", padx=5, pady=5)
+    monty.pack(padx=10,pady=10)
+    entry = Entry(monty)
+    entry.pack()     
+
+    def get_text():
+        print(entry.get())
+        syn1 = entry.get()
+        totL = Synonyms(syn1)
+        # Displaying Results     
+        scrolTxt = tkst.ScrolledText(monty, width=100, height=30, wrap=tk.WORD)
+        scrolTxt.insert(tkinter.INSERT,totL)
+        scrolTxt.pack()
+        print(totL)
+        
+    
+
+    def Synonyms(entry):
+        # Synonym analysis portion
+        syn = list()
+        from nltk.corpus import wordnet
+        for synset in wordnet.synsets(entry):
+            for lemma in synset.lemmas():
+                syn.append(lemma.name())#add the synonyms
+        totL = ("Synonyms: " + str(syn))
+        return totL
+
+
+
+    #b = Button(monty, text="OK", fg="red").pack()
+    FunctionCall = Button(monty, text="Enter", command=get_text)
+    FunctionCall.pack()
+
+    window5.mainloop()
+    
 def stop_words():
                              
-    #jsut have a function that can remember the name of the file, instead of always
+    #just have a function that can remember the name of the file, instead of always
     #opening the file
 
     import tkinter
@@ -261,10 +312,7 @@ def stop_words():
     scrolTxt = tkst.ScrolledText(monty, width=100, height=30, wrap=tk.WORD)
     #scrolTxt.grid(column=0, row=3, sticky='WE', columnspan=3)
     scrolTxt.grid(column=1,row=3)
-    scrolTxt.insert(tkinter.INSERT,stop_words)
-
-
-    
+    scrolTxt.insert(tkinter.INSERT,stop_words)    
 
     print(stop_words)
     print("REMOVING STOP WORDS FROM THE TEXT\n")
@@ -327,7 +375,7 @@ def stop_words():
     for w in unfiltered:
         if w not in filtered_sent:
             missing_words.append(w)
-    print("MIssing words", missing_words)
+    print("Missing words", missing_words)
 
     scrolTxt4 = tkst.ScrolledText(monty4, width=100, height=30, wrap=tk.WORD)
     scrolTxt4.grid(column=1,row=3)

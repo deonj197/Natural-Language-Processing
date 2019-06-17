@@ -45,7 +45,14 @@ def Stats_Menu_Gui(window2):
         sentece_word_tag()
     option5Button = Button(window3, text = 'Word Tagging', bg = 'light blue', fg = 'black', command = local5)
     option5Button.config(height = 1, width = 20)
-    option5Button.grid(pady = 15)        
+    option5Button.grid(pady = 15)
+
+    def local6():
+        Synonym_analysis()
+    option5Button = Button(window3, text = 'Synonym Analysis', bg = 'light blue', fg = 'black', command = local6)
+    option5Button.config(height = 1, width = 20)
+    option5Button.grid(pady = 15)
+    
         
     def quite():
         window3.destroy()
