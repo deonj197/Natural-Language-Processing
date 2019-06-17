@@ -3,6 +3,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from Data_Models.word import Word
 from Data_Models.sentence import Sentence
+import pyodbc
 
 """
 In order for this to work you must install firebase_admin. Use the following command to install...
@@ -26,3 +27,10 @@ def store(raw, tagged):
     text = Sentence(raw, words=words)
     database.collection(u'sentences').add(text.to_dict())
 
+
+server = '40.76.203.241:3389'
+database = 'PODS_DB_1'
+username = 'deon'
+password = 'project2019'
+cnxn = pyodbc.connect('DRIVE = {ODBC Driver 17 for SQL Server}; '+ server + ';DATABASE = ' +database+ '; UID = '+username +'; PWD = '+password)
+cursor = cnxn.cursor();
