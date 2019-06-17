@@ -27,10 +27,15 @@ def store(raw, tagged):
     text = Sentence(raw, words=words)
     database.collection(u'sentences').add(text.to_dict())
 
+conn = pyodbc.connect ('Driver={SQL Server};'
+                       'Server=40.76.203.241;'
+                       'Database=PODS_DB_1;'
+                       'UID=deon;'
+                       'PWD=project2019.;')
 
-server = '40.76.203.241:3389'
-database = 'PODS_DB_1'
-username = 'deon'
-password = 'project2019'
-cnxn = pyodbc.connect('DRIVE = {ODBC Driver 17 for SQL Server}; '+ server + ';DATABASE = ' +database+ '; UID = '+username +'; PWD = '+password)
-cursor = cnxn.cursor();
+#cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=40.76.203.241;PORT=3389;DATABASE=PODS_DB_1;UID=deon;PWD=project2019.')
+cursor = conn.cursor()
+cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
+
+for row in cursor:
+    print(row)
