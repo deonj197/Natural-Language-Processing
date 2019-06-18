@@ -1,0 +1,13 @@
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\bin\Debug\frmTitles.exe.config
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\bin\Debug\frmTitles.exe
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\bin\Debug\frmTitles.pdb
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.Form1.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.Menu.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.PersonalizedSqlQueries.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.Properties.Resources.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.TableList.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.TokenizedWord.resources
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.csproj.GenerateResource.Cache
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.exe
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.pdb
+C:\Users\user\Documents\Visual Studio 2015\Projects\frmTitles\obj\Debug\frmTitles.csprojResolveAssemblyReference.cache
