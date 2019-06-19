@@ -53,7 +53,7 @@
             // 
             // AddNewButton
             // 
-            this.AddNewButton.Location = new System.Drawing.Point(381, 325);
+            this.AddNewButton.Location = new System.Drawing.Point(326, 316);
             this.AddNewButton.Name = "AddNewButton";
             this.AddNewButton.Size = new System.Drawing.Size(75, 23);
             this.AddNewButton.TabIndex = 39;
@@ -63,7 +63,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(526, 325);
+            this.DeleteButton.Location = new System.Drawing.Point(471, 316);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 38;
@@ -73,7 +73,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(281, 324);
+            this.CancelButton.Location = new System.Drawing.Point(226, 315);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 37;
@@ -83,7 +83,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(161, 325);
+            this.SaveButton.Location = new System.Drawing.Point(106, 316);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 36;
@@ -93,7 +93,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(63, 324);
+            this.EditButton.Location = new System.Drawing.Point(8, 315);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
             this.EditButton.TabIndex = 35;
@@ -103,7 +103,7 @@
             // 
             // GoBack
             // 
-            this.GoBack.Location = new System.Drawing.Point(526, 252);
+            this.GoBack.Location = new System.Drawing.Point(471, 243);
             this.GoBack.Name = "GoBack";
             this.GoBack.Size = new System.Drawing.Size(75, 23);
             this.GoBack.TabIndex = 34;
@@ -114,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 209);
+            this.label1.Location = new System.Drawing.Point(117, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 33;
@@ -122,7 +122,7 @@
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(381, 252);
+            this.buttonLast.Location = new System.Drawing.Point(326, 243);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(75, 23);
             this.buttonLast.TabIndex = 32;
@@ -132,7 +132,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(281, 252);
+            this.buttonNext.Location = new System.Drawing.Point(226, 243);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 31;
@@ -142,7 +142,7 @@
             // 
             // buttonPrev
             // 
-            this.buttonPrev.Location = new System.Drawing.Point(161, 252);
+            this.buttonPrev.Location = new System.Drawing.Point(106, 243);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(75, 23);
             this.buttonPrev.TabIndex = 30;
@@ -152,7 +152,7 @@
             // 
             // buttonFirst
             // 
-            this.buttonFirst.Location = new System.Drawing.Point(63, 252);
+            this.buttonFirst.Location = new System.Drawing.Point(8, 243);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(75, 23);
             this.buttonFirst.TabIndex = 29;
@@ -162,28 +162,28 @@
             // 
             // textInfo
             // 
-            this.textInfo.Location = new System.Drawing.Point(161, 168);
+            this.textInfo.Location = new System.Drawing.Point(226, 159);
             this.textInfo.Name = "textInfo";
             this.textInfo.Size = new System.Drawing.Size(246, 20);
             this.textInfo.TabIndex = 28;
             // 
             // textTag
             // 
-            this.textTag.Location = new System.Drawing.Point(161, 125);
+            this.textTag.Location = new System.Drawing.Point(226, 116);
             this.textTag.Name = "textTag";
             this.textTag.Size = new System.Drawing.Size(246, 20);
             this.textTag.TabIndex = 27;
             // 
             // textWord
             // 
-            this.textWord.Location = new System.Drawing.Point(161, 78);
+            this.textWord.Location = new System.Drawing.Point(226, 69);
             this.textWord.Name = "textWord";
             this.textWord.Size = new System.Drawing.Size(246, 20);
             this.textWord.TabIndex = 26;
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(161, 31);
+            this.textID.Location = new System.Drawing.Point(226, 22);
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(246, 20);
@@ -192,7 +192,7 @@
             // info
             // 
             this.info.AutoSize = true;
-            this.info.Location = new System.Drawing.Point(51, 171);
+            this.info.Location = new System.Drawing.Point(116, 162);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(69, 13);
             this.info.TabIndex = 24;
@@ -201,7 +201,7 @@
             // ISBN
             // 
             this.ISBN.AutoSize = true;
-            this.ISBN.Location = new System.Drawing.Point(52, 125);
+            this.ISBN.Location = new System.Drawing.Point(117, 116);
             this.ISBN.Name = "ISBN";
             this.ISBN.Size = new System.Drawing.Size(26, 13);
             this.ISBN.TabIndex = 23;
@@ -210,7 +210,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 78);
+            this.label2.Location = new System.Drawing.Point(116, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 22;
@@ -219,7 +219,7 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(52, 31);
+            this.Title.Location = new System.Drawing.Point(117, 22);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(18, 13);
             this.Title.TabIndex = 21;
@@ -227,16 +227,16 @@
             // 
             // TextConnect
             // 
-            this.TextConnect.Location = new System.Drawing.Point(161, 206);
+            this.TextConnect.Location = new System.Drawing.Point(226, 197);
             this.TextConnect.Name = "TextConnect";
-            this.TextConnect.Size = new System.Drawing.Size(296, 20);
+            this.TextConnect.Size = new System.Drawing.Size(246, 20);
             this.TextConnect.TabIndex = 20;
             // 
             // TokenizedWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 378);
+            this.ClientSize = new System.Drawing.Size(574, 362);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.CancelButton);

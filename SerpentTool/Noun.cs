@@ -44,7 +44,7 @@ namespace frmTitles
 
 
 
-            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Marco\Desktop\Books.accdb;
+            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Marco\Desktop\Natural-Language-Processing\Books.accdb;
                         Persist Security Info = False;";
 
             conn = new OleDbConnection(connString);

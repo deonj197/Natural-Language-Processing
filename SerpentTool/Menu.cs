@@ -42,5 +42,10 @@ namespace frmTitles
             form2.ShowDialog();
             this.Show();
         }
+
+        private void QuitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -48,7 +48,7 @@
             // 
             // AddNewButton
             // 
-            this.AddNewButton.Location = new System.Drawing.Point(362, 330);
+            this.AddNewButton.Location = new System.Drawing.Point(330, 267);
             this.AddNewButton.Name = "AddNewButton";
             this.AddNewButton.Size = new System.Drawing.Size(75, 23);
             this.AddNewButton.TabIndex = 59;
@@ -58,7 +58,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(507, 330);
+            this.DeleteButton.Location = new System.Drawing.Point(475, 267);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 58;
@@ -68,7 +68,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(262, 329);
+            this.CancelButton.Location = new System.Drawing.Point(230, 266);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 57;
@@ -78,7 +78,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(142, 330);
+            this.SaveButton.Location = new System.Drawing.Point(110, 267);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 56;
@@ -88,7 +88,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(44, 329);
+            this.EditButton.Location = new System.Drawing.Point(12, 266);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
             this.EditButton.TabIndex = 55;
@@ -98,7 +98,7 @@
             // 
             // GoBack
             // 
-            this.GoBack.Location = new System.Drawing.Point(507, 257);
+            this.GoBack.Location = new System.Drawing.Point(475, 194);
             this.GoBack.Name = "GoBack";
             this.GoBack.Size = new System.Drawing.Size(75, 23);
             this.GoBack.TabIndex = 54;
@@ -109,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 194);
+            this.label1.Location = new System.Drawing.Point(103, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 53;
@@ -117,7 +117,7 @@
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(362, 257);
+            this.buttonLast.Location = new System.Drawing.Point(330, 194);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(75, 23);
             this.buttonLast.TabIndex = 52;
@@ -127,7 +127,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(262, 257);
+            this.buttonNext.Location = new System.Drawing.Point(230, 194);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 51;
@@ -137,7 +137,7 @@
             // 
             // buttonPrev
             // 
-            this.buttonPrev.Location = new System.Drawing.Point(142, 257);
+            this.buttonPrev.Location = new System.Drawing.Point(110, 194);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(75, 23);
             this.buttonPrev.TabIndex = 50;
@@ -147,7 +147,7 @@
             // 
             // buttonFirst
             // 
-            this.buttonFirst.Location = new System.Drawing.Point(44, 257);
+            this.buttonFirst.Location = new System.Drawing.Point(12, 194);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(75, 23);
             this.buttonFirst.TabIndex = 49;
@@ -157,14 +157,14 @@
             // 
             // textWord
             // 
-            this.textWord.Location = new System.Drawing.Point(142, 83);
+            this.textWord.Location = new System.Drawing.Point(213, 82);
             this.textWord.Name = "textWord";
             this.textWord.Size = new System.Drawing.Size(246, 20);
             this.textWord.TabIndex = 46;
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(142, 36);
+            this.textID.Location = new System.Drawing.Point(213, 35);
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(246, 20);
@@ -173,7 +173,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 83);
+            this.label2.Location = new System.Drawing.Point(103, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 42;
@@ -182,7 +182,7 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(33, 36);
+            this.Title.Location = new System.Drawing.Point(104, 35);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(18, 13);
             this.Title.TabIndex = 41;
@@ -190,16 +190,16 @@
             // 
             // TextConnect
             // 
-            this.TextConnect.Location = new System.Drawing.Point(142, 191);
+            this.TextConnect.Location = new System.Drawing.Point(213, 129);
             this.TextConnect.Name = "TextConnect";
-            this.TextConnect.Size = new System.Drawing.Size(296, 20);
+            this.TextConnect.Size = new System.Drawing.Size(246, 20);
             this.TextConnect.TabIndex = 40;
             // 
             // SynonymVerb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 389);
+            this.ClientSize = new System.Drawing.Size(582, 315);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.CancelButton);

@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,9 +40,7 @@ namespace frmTitles
             //Current Standard Security
             //String to be passed into connection, make sure to put the path of db file
 
-         
-
-            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Marco\Desktop\Books.accdb;
+            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Marco\Desktop\Natural-Language-Processing\Books.accdb;
                         Persist Security Info = False;";
 
             conn = new OleDbConnection(connString);

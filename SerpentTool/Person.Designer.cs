@@ -50,7 +50,7 @@
             // 
             // AddNewButton
             // 
-            this.AddNewButton.Location = new System.Drawing.Point(455, 361);
+            this.AddNewButton.Location = new System.Drawing.Point(330, 275);
             this.AddNewButton.Name = "AddNewButton";
             this.AddNewButton.Size = new System.Drawing.Size(75, 23);
             this.AddNewButton.TabIndex = 59;
@@ -60,7 +60,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(600, 361);
+            this.DeleteButton.Location = new System.Drawing.Point(475, 275);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 58;
@@ -70,7 +70,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(355, 360);
+            this.CancelButton.Location = new System.Drawing.Point(230, 274);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 57;
@@ -80,7 +80,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(235, 361);
+            this.SaveButton.Location = new System.Drawing.Point(110, 275);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 56;
@@ -90,7 +90,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(137, 360);
+            this.EditButton.Location = new System.Drawing.Point(12, 274);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
             this.EditButton.TabIndex = 55;
@@ -100,7 +100,7 @@
             // 
             // GoBack
             // 
-            this.GoBack.Location = new System.Drawing.Point(600, 288);
+            this.GoBack.Location = new System.Drawing.Point(475, 202);
             this.GoBack.Name = "GoBack";
             this.GoBack.Size = new System.Drawing.Size(75, 23);
             this.GoBack.TabIndex = 54;
@@ -110,7 +110,7 @@
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(455, 288);
+            this.buttonLast.Location = new System.Drawing.Point(330, 202);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(75, 23);
             this.buttonLast.TabIndex = 52;
@@ -120,7 +120,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(355, 288);
+            this.buttonNext.Location = new System.Drawing.Point(230, 202);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 51;
@@ -130,7 +130,7 @@
             // 
             // buttonPrev
             // 
-            this.buttonPrev.Location = new System.Drawing.Point(235, 288);
+            this.buttonPrev.Location = new System.Drawing.Point(110, 202);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(75, 23);
             this.buttonPrev.TabIndex = 50;
@@ -140,7 +140,7 @@
             // 
             // buttonFirst
             // 
-            this.buttonFirst.Location = new System.Drawing.Point(137, 288);
+            this.buttonFirst.Location = new System.Drawing.Point(12, 202);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(75, 23);
             this.buttonFirst.TabIndex = 49;
@@ -150,28 +150,28 @@
             // 
             // textTitle
             // 
-            this.textTitle.Location = new System.Drawing.Point(235, 204);
+            this.textTitle.Location = new System.Drawing.Point(230, 146);
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(246, 20);
             this.textTitle.TabIndex = 48;
             // 
             // textLast
             // 
-            this.textLast.Location = new System.Drawing.Point(235, 161);
+            this.textLast.Location = new System.Drawing.Point(230, 103);
             this.textLast.Name = "textLast";
             this.textLast.Size = new System.Drawing.Size(246, 20);
             this.textLast.TabIndex = 47;
             // 
             // textFirst
             // 
-            this.textFirst.Location = new System.Drawing.Point(235, 114);
+            this.textFirst.Location = new System.Drawing.Point(230, 56);
             this.textFirst.Name = "textFirst";
             this.textFirst.Size = new System.Drawing.Size(246, 20);
             this.textFirst.TabIndex = 46;
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(235, 67);
+            this.textID.Location = new System.Drawing.Point(230, 9);
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(246, 20);
@@ -180,7 +180,7 @@
             // info
             // 
             this.info.AutoSize = true;
-            this.info.Location = new System.Drawing.Point(125, 207);
+            this.info.Location = new System.Drawing.Point(120, 149);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(27, 13);
             this.info.TabIndex = 44;
@@ -189,7 +189,7 @@
             // ISBN
             // 
             this.ISBN.AutoSize = true;
-            this.ISBN.Location = new System.Drawing.Point(126, 161);
+            this.ISBN.Location = new System.Drawing.Point(121, 103);
             this.ISBN.Name = "ISBN";
             this.ISBN.Size = new System.Drawing.Size(58, 13);
             this.ISBN.TabIndex = 43;
@@ -198,7 +198,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 114);
+            this.label2.Location = new System.Drawing.Point(120, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 42;
@@ -207,7 +207,7 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(126, 67);
+            this.Title.Location = new System.Drawing.Point(121, 9);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(18, 13);
             this.Title.TabIndex = 41;
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(615, 323);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.CancelButton);

@@ -113,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 199);
+            this.label1.Location = new System.Drawing.Point(131, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 53;
@@ -161,28 +161,28 @@
             // 
             // textInfo
             // 
-            this.textInfo.Location = new System.Drawing.Point(134, 158);
+            this.textInfo.Location = new System.Drawing.Point(240, 149);
             this.textInfo.Name = "textInfo";
             this.textInfo.Size = new System.Drawing.Size(246, 20);
             this.textInfo.TabIndex = 48;
             // 
             // textTag
             // 
-            this.textTag.Location = new System.Drawing.Point(134, 115);
+            this.textTag.Location = new System.Drawing.Point(240, 106);
             this.textTag.Name = "textTag";
             this.textTag.Size = new System.Drawing.Size(246, 20);
             this.textTag.TabIndex = 47;
             // 
             // textWord
             // 
-            this.textWord.Location = new System.Drawing.Point(134, 68);
+            this.textWord.Location = new System.Drawing.Point(240, 59);
             this.textWord.Name = "textWord";
             this.textWord.Size = new System.Drawing.Size(246, 20);
             this.textWord.TabIndex = 46;
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(134, 21);
+            this.textID.Location = new System.Drawing.Point(240, 12);
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(246, 20);
@@ -191,7 +191,7 @@
             // info
             // 
             this.info.AutoSize = true;
-            this.info.Location = new System.Drawing.Point(24, 161);
+            this.info.Location = new System.Drawing.Point(130, 152);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(55, 13);
             this.info.TabIndex = 44;
@@ -200,7 +200,7 @@
             // ISBN
             // 
             this.ISBN.AutoSize = true;
-            this.ISBN.Location = new System.Drawing.Point(25, 115);
+            this.ISBN.Location = new System.Drawing.Point(131, 106);
             this.ISBN.Name = "ISBN";
             this.ISBN.Size = new System.Drawing.Size(50, 13);
             this.ISBN.TabIndex = 43;
@@ -209,7 +209,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 68);
+            this.label2.Location = new System.Drawing.Point(130, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 42;
@@ -218,7 +218,7 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(25, 21);
+            this.Title.Location = new System.Drawing.Point(131, 12);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(18, 13);
             this.Title.TabIndex = 41;
@@ -226,9 +226,9 @@
             // 
             // TextConnect
             // 
-            this.TextConnect.Location = new System.Drawing.Point(134, 196);
+            this.TextConnect.Location = new System.Drawing.Point(240, 187);
             this.TextConnect.Name = "TextConnect";
-            this.TextConnect.Size = new System.Drawing.Size(296, 20);
+            this.TextConnect.Size = new System.Drawing.Size(246, 20);
             this.TextConnect.TabIndex = 40;
             // 
             // Verb

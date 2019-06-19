@@ -52,7 +52,7 @@
             // 
             // AddNewButton
             // 
-            this.AddNewButton.Location = new System.Drawing.Point(438, 471);
+            this.AddNewButton.Location = new System.Drawing.Point(354, 319);
             this.AddNewButton.Name = "AddNewButton";
             this.AddNewButton.Size = new System.Drawing.Size(75, 23);
             this.AddNewButton.TabIndex = 99;
@@ -62,7 +62,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(583, 471);
+            this.DeleteButton.Location = new System.Drawing.Point(499, 319);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 98;
@@ -72,7 +72,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(338, 470);
+            this.CancelButton.Location = new System.Drawing.Point(254, 318);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 97;
@@ -82,7 +82,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(218, 471);
+            this.SaveButton.Location = new System.Drawing.Point(134, 319);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 96;
@@ -92,7 +92,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(120, 470);
+            this.EditButton.Location = new System.Drawing.Point(36, 318);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
             this.EditButton.TabIndex = 95;
@@ -102,7 +102,7 @@
             // 
             // GoBack
             // 
-            this.GoBack.Location = new System.Drawing.Point(583, 398);
+            this.GoBack.Location = new System.Drawing.Point(499, 246);
             this.GoBack.Name = "GoBack";
             this.GoBack.Size = new System.Drawing.Size(75, 23);
             this.GoBack.TabIndex = 94;
@@ -113,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 245);
+            this.label1.Location = new System.Drawing.Point(93, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 93;
@@ -121,7 +121,7 @@
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(438, 398);
+            this.buttonLast.Location = new System.Drawing.Point(354, 246);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(75, 23);
             this.buttonLast.TabIndex = 92;
@@ -131,7 +131,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(338, 398);
+            this.buttonNext.Location = new System.Drawing.Point(254, 246);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 91;
@@ -141,7 +141,7 @@
             // 
             // buttonPrev
             // 
-            this.buttonPrev.Location = new System.Drawing.Point(218, 398);
+            this.buttonPrev.Location = new System.Drawing.Point(134, 246);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(75, 23);
             this.buttonPrev.TabIndex = 90;
@@ -151,7 +151,7 @@
             // 
             // buttonFirst
             // 
-            this.buttonFirst.Location = new System.Drawing.Point(120, 398);
+            this.buttonFirst.Location = new System.Drawing.Point(36, 246);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(75, 23);
             this.buttonFirst.TabIndex = 89;
@@ -161,21 +161,21 @@
             // 
             // textWho
             // 
-            this.textWho.Location = new System.Drawing.Point(235, 204);
+            this.textWho.Location = new System.Drawing.Point(202, 158);
             this.textWho.Name = "textWho";
             this.textWho.Size = new System.Drawing.Size(296, 20);
             this.textWho.TabIndex = 88;
             // 
             // textDocument
             // 
-            this.textDocument.Location = new System.Drawing.Point(235, 114);
+            this.textDocument.Location = new System.Drawing.Point(202, 68);
             this.textDocument.Name = "textDocument";
             this.textDocument.Size = new System.Drawing.Size(296, 20);
             this.textDocument.TabIndex = 87;
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(235, 67);
+            this.textID.Location = new System.Drawing.Point(202, 21);
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(296, 20);
@@ -184,7 +184,7 @@
             // info
             // 
             this.info.AutoSize = true;
-            this.info.Location = new System.Drawing.Point(125, 207);
+            this.info.Location = new System.Drawing.Point(92, 161);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(30, 13);
             this.info.TabIndex = 84;
@@ -193,7 +193,7 @@
             // ISBN
             // 
             this.ISBN.AutoSize = true;
-            this.ISBN.Location = new System.Drawing.Point(126, 117);
+            this.ISBN.Location = new System.Drawing.Point(93, 71);
             this.ISBN.Name = "ISBN";
             this.ISBN.Size = new System.Drawing.Size(56, 13);
             this.ISBN.TabIndex = 83;
@@ -202,7 +202,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(126, 167);
+            this.label2.Location = new System.Drawing.Point(93, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 82;
@@ -211,7 +211,7 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(126, 70);
+            this.Title.Location = new System.Drawing.Point(93, 24);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(18, 13);
             this.Title.TabIndex = 81;
@@ -219,14 +219,14 @@
             // 
             // TextFind
             // 
-            this.TextFind.Location = new System.Drawing.Point(235, 242);
+            this.TextFind.Location = new System.Drawing.Point(202, 196);
             this.TextFind.Name = "TextFind";
             this.TextFind.Size = new System.Drawing.Size(296, 20);
             this.TextFind.TabIndex = 80;
             // 
             // textPOD
             // 
-            this.textPOD.Location = new System.Drawing.Point(235, 164);
+            this.textPOD.Location = new System.Drawing.Point(202, 118);
             this.textPOD.Name = "textPOD";
             this.textPOD.Size = new System.Drawing.Size(296, 20);
             this.textPOD.TabIndex = 100;
@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 557);
+            this.ClientSize = new System.Drawing.Size(604, 372);
             this.Controls.Add(this.textPOD);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.DeleteButton);
