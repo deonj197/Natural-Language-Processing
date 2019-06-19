@@ -5,6 +5,7 @@ from Data_Models.word import Word
 from Data_Models.sentence import Sentence
 import pyodbc
 
+
 """
 In order for this to work you must install firebase_admin. Use the following command to install...
 
@@ -36,7 +37,17 @@ conn = pyodbc.connect ('Driver={ODBC Driver 11 for SQL Server};'
 
 #cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=40.76.203.241;PORT=3389;DATABASE=PODS_DB_1;UID=deon;PWD=project2019.')
 cursor = conn.cursor()
-cursor.execute('SELECT * FROM PODS_DB_1.dbo.Verb')
+
+'------------------Insert Into SQL Server-------------------'
+cursor.execute('''
+    INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun)
+    VALUES
+    ('now', 5),
+    ('there', 3)
+    ''')
+conn.commit()
+
+cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
 
 for row in cursor:
     print(row)
