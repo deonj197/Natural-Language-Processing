@@ -4,8 +4,7 @@ from firebase_admin import firestore
 from Data_Models.word import Word
 from Data_Models.sentence import Sentence
 import pyodbc
-
-
+import nltk
 """
 In order for this to work you must install firebase_admin. Use the following command to install...
 
@@ -28,6 +27,9 @@ def store(raw, tagged):
     text = Sentence(raw, words=words)
     database.collection(u'sentences').add(text.to_dict())
 
+
+
+
 #https://www.microsoft.com/en-us/download/details.aspx?id=36434
 conn = pyodbc.connect ('Driver={ODBC Driver 11 for SQL Server};'
                        'Server=40.76.203.241;'
@@ -39,12 +41,18 @@ conn = pyodbc.connect ('Driver={ODBC Driver 11 for SQL Server};'
 cursor = conn.cursor()
 
 '------------------Insert Into SQL Server-------------------'
+'''
+def store(raw, tagged):
+    words = []
+    for pair in tagged:
+        word = Word(pair[0], pair[1])
+        if(pair[1] == 'NN'):
+        '''
+
+insertValue = ('something')
 cursor.execute('''
-    INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun)
-    VALUES
-    ('now', 5),
-    ('there', 3)
-    ''')
+    INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun, Synonym, Language)
+    VALUES(?,?,?,?)    ''' , insertValue)
 conn.commit()
 
 cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
