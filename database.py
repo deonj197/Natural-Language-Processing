@@ -41,21 +41,46 @@ conn = pyodbc.connect ('Driver={ODBC Driver 11 for SQL Server};'
 cursor = conn.cursor()
 
 '------------------Insert Into SQL Server-------------------'
-'''
-def store(raw, tagged):
-    words = []
-    for pair in tagged:
-        word = Word(pair[0], pair[1])
-        if(pair[1] == 'NN'):
-        '''
+text = ['If you need to add items of a list to the another list (rather than the list itself), extend() method is used']
 
-insertValue = ('something')
-cursor.execute('''
+#example of inserting to sql server
+for i in text:
+    word = []
+    words = nltk.word_tokenize(i)
+    tagged = nltk.pos_tag(words)
+    word= tagged
+    for i in word:
+        #print(i)
+        if(i[1] == 'NN' or i[1] =='NNS' or
+            i[1] == 'NNP' or i[1] == 'NNPS'):
+             temp = i[0]
+             print(i)
+
+             
+             insertValue = (temp,0,0,0)
+             cursor.execute('''
     INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun, Synonym, Language)
     VALUES(?,?,?,?)    ''' , insertValue)
-conn.commit()
+             conn.commit()
 
 cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
 
 for row in cursor:
     print(row)
+"""    
+           
+for i in text:
+    if(i == 'that'):
+        temp = i
+
+        insertValue = (temp,0,0,0)
+        cursor.execute('''
+    INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun, Synonym, Language)
+    VALUES(?,?,?,?)    ''' , insertValue)
+        conn.commit()
+
+cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
+
+for row in cursor:
+    print(row)
+"""

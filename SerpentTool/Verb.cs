@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Odbc;
 
 namespace frmTitles
 {
@@ -42,6 +43,7 @@ namespace frmTitles
             var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Marco\Desktop\Natural-Language-Processing\Books.accdb;
                         Persist Security Info = False;";
 
+  
             conn = new OleDbConnection(connString);
             conn.Open();
             //Connection State
