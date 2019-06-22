@@ -47,7 +47,7 @@ def storeData(raw):
         for pair in tagWord:
             if(pair[1] == 'NN' or pair[1] =='NNS' or pair[1] == 'NNP' or pair[1] == 'NNPS'):
                  tempNoun = pair[0]
-                 print(pair)
+                 #print(pair)
                 
                  insertNoun = (tempNoun,0,0,1)
                  cursor.execute('''
@@ -57,7 +57,7 @@ def storeData(raw):
 
             elif(pair[1] == 'VB' or pair[1] =='VBD' or pair[1] == 'VBG' or pair[1] == 'VBN'or pair[1] == 'VBP' or pair[1] == 'VBZ'):
                  tempVerb = pair[0]
-                 print(pair)
+                # print(pair)
                  insertVerb = (tempVerb,0,1)
                  cursor.execute('''
         INSERT INTO PODS_DB_1.dbo.Verb (VerbDesc, Synonym, Language)
