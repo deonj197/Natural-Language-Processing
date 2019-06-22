@@ -1,1 +1,1 @@
-This is a test sentence that we will run.
+If you need to add items of a to the another(rather than the list itself), extend() method is used

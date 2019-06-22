@@ -46,10 +46,10 @@ def read_text():
     #Passing values by references (goes to print sentence) and passes data there
     #print_sentence(raw)
     #print_tokenizer(raw)
-
     tokens = nltk.word_tokenize(raw)
-    print(tokens)   
-
+   #print(tokens)   
+    storeData(tokens)
+    
 #Read from an online page    
 def read_from_web():
     

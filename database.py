@@ -10,12 +10,10 @@ In order for this to work you must install firebase_admin. Use the following com
 
 pip install --upgrade firebase-admin
 """
-
 cred = credentials.Certificate("firebaseServiceAccountKey.json")
 firebase_admin.initialize_app(cred)
 
 database = firestore.client()
-
 
 def store(raw, tagged):
     words = []
@@ -28,10 +26,8 @@ def store(raw, tagged):
     database.collection(u'sentences').add(text.to_dict())
 
 
-
-
 #https://www.microsoft.com/en-us/download/details.aspx?id=36434
-conn = pyodbc.connect ('Driver={ODBC Driver 11 for SQL Server};'
+conn = pyodbc.connect ('Driver={SQL Server};'
                        'Server=40.76.203.241;'
                        'Database=PODS_DB_1;'
                        'UID=deon;'
@@ -41,46 +37,35 @@ conn = pyodbc.connect ('Driver={ODBC Driver 11 for SQL Server};'
 cursor = conn.cursor()
 
 '------------------Insert Into SQL Server-------------------'
-text = ['If you need to add items of a list to the another list (rather than the list itself), extend() method is used']
+#Will be called in read_text.py
+def storeData(raw):
+    for i in raw:
+        tagWord = []
+        words = nltk.word_tokenize(i)
+        tagged = nltk.pos_tag(words)
+        tagWord = tagged
+        for pair in tagWord:
+            if(pair[1] == 'NN' or pair[1] =='NNS' or pair[1] == 'NNP' or pair[1] == 'NNPS'):
+                 tempNoun = pair[0]
+                 print(pair)
+                
+                 insertNoun = (tempNoun,0,0,1)
+                 cursor.execute('''
+        INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun, Synonym, Language)
+        VALUES(?,?,?,?)    ''' , insertNoun)
+                 conn.commit()
 
-#example of inserting to sql server
-for i in text:
-    word = []
-    words = nltk.word_tokenize(i)
-    tagged = nltk.pos_tag(words)
-    word= tagged
-    for i in word:
-        #print(i)
-        if(i[1] == 'NN' or i[1] =='NNS' or
-            i[1] == 'NNP' or i[1] == 'NNPS'):
-             temp = i[0]
-             print(i)
+            elif(pair[1] == 'VB' or pair[1] =='VBD' or pair[1] == 'VBG' or pair[1] == 'VBN'or pair[1] == 'VBP' or pair[1] == 'VBZ'):
+                 tempVerb = pair[0]
+                 print(pair)
+                 insertVerb = (tempVerb,0,1)
+                 cursor.execute('''
+        INSERT INTO PODS_DB_1.dbo.Verb (VerbDesc, Synonym, Language)
+        VALUES(?,?,?)   ''' , insertVerb)
+                 conn.commit()
 
-             
-             insertValue = (temp,0,0,0)
-             cursor.execute('''
-    INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun, Synonym, Language)
-    VALUES(?,?,?,?)    ''' , insertValue)
-             conn.commit()
-
+"""
 cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
-
-for row in cursor:
-    print(row)
-"""    
-           
-for i in text:
-    if(i == 'that'):
-        temp = i
-
-        insertValue = (temp,0,0,0)
-        cursor.execute('''
-    INSERT INTO PODS_DB_1.dbo.Noun (NounDesc, Pronoun, Synonym, Language)
-    VALUES(?,?,?,?)    ''' , insertValue)
-        conn.commit()
-
-cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
-
 for row in cursor:
     print(row)
 """
