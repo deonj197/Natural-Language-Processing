@@ -93,7 +93,9 @@ def read_from_web():
         #TOKENIZE TEXT
         #Have a second scrollText?? or open in new page?? try new options
         print_tokenizer(raw)
-
+        tokens = nltk.word_tokenize(raw)
+   #print(tokens)   
+        storeData(tokens)
     #Button to perform url retrieval
     option1Button = Button(window3, text= "GET WEB PAGE", bg="light blue", fg="black", command = strip)
     option1Button.config(height = 1, width = 20)

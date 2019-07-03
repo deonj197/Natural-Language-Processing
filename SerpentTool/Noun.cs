@@ -44,7 +44,7 @@ namespace frmTitles
 
 
 
-            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Marco\Desktop\Natural-Language-Processing\Books.accdb;
+            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source =C:\Users\Jason\Documents\GitHub\Natural-Language-Processing\AGIpods.accdb;
                         Persist Security Info = False;";
 
             conn = new OleDbConnection(connString);
@@ -53,7 +53,7 @@ namespace frmTitles
             TextLanguage.Text = conn.State.ToString();
 
             //Query that you want to perform (data that is needed from the table)
-            TokenWordCommand = new OleDbCommand("Select * from Noun", conn);
+            TokenWordCommand = new OleDbCommand("Select * from dbo_Noun", conn);
 
             //
             TokenWordAdapter = new OleDbDataAdapter();

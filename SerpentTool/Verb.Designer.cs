@@ -187,6 +187,7 @@
             this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(246, 20);
             this.textID.TabIndex = 45;
+            this.textID.TextChanged += new System.EventHandler(this.textID_TextChanged);
             // 
             // info
             // 

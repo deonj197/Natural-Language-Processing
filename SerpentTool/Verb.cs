@@ -40,7 +40,7 @@ namespace frmTitles
             //Current Standard Security
             //String to be passed into connection, make sure to put the path of db file
 
-            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Marco\Desktop\Natural-Language-Processing\Books.accdb;
+            var connString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\Jason\Documents\GitHub\Natural-Language-Processing\testingDB.accdb;
                         Persist Security Info = False;";
 
   
@@ -177,6 +177,9 @@ namespace frmTitles
             conn.Dispose();
         }
 
+        private void textID_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

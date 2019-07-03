@@ -28,9 +28,9 @@ def store(raw, tagged):
 
 #https://www.microsoft.com/en-us/download/details.aspx?id=36434
 conn = pyodbc.connect ('Driver={SQL Server};'
-                       'Server=40.76.203.241;'
+                       'Server=35.239.55.42;'
                        'Database=PODS_DB_1;'
-                       'UID=deon;'
+                       'UID=analytics-admin;'
                        'PWD=project2019.;')
 
 #cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=40.76.203.241;PORT=3389;DATABASE=PODS_DB_1;UID=deon;PWD=project2019.')
@@ -63,9 +63,3 @@ def storeData(raw):
         INSERT INTO PODS_DB_1.dbo.Verb (VerbDesc, Synonym, Language)
         VALUES(?,?,?)   ''' , insertVerb)
                  conn.commit()
-
-"""
-cursor.execute('SELECT * FROM PODS_DB_1.dbo.Noun')
-for row in cursor:
-    print(row)
-"""
