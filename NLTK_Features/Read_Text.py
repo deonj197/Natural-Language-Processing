@@ -15,13 +15,40 @@ def read_from_book():
     print(raw2)
 
 
+#****************************** READ FROM LOCAL FILE **************************************
 #Read from local directory
 def read_text():
-    import nltk
-    from nltk.corpus import PlaintextCorpusReader
+    #just have a function that can remember the name of the file, instead of always
+    #opening the file
+    window= Tk()
+    window.geometry("900x500")
+    window.title("WORDS TAGGING FUNCTION")
 
-    # Open From File GUI
-    from tkinter.filedialog import askopenfilename
+    nb = ttk.Notebook(window)
+
+    page1 = ttk.Frame(nb)
+    page2 = ttk.Frame(nb)
+    page3 = ttk.Frame(nb)
+    #page4 = ttk.Frame(nb)
+    
+    nb.add(page1, text = 'Sentence tokenization')
+    nb.add(page2, text= 'Word tokenization')
+    nb.add(page3, text='WORDS TAGGING')
+    #nb.add(page4, test='Names')
+
+    nb.pack(expand=1, fill="both")
+   
+    monty = ttk.LabelFrame(page1, text=' ORIGINAL SENTENCE ')
+    monty.grid(column=0, row=0, padx=8, pady=4)
+
+    monty2 = ttk.LabelFrame(page2, text=' WORD　TOKENIZATION')
+    monty2.grid(column=0, row=0, padx=8, pady=4)
+
+    monty3 = ttk.LabelFrame(page3, text=' WORDS TAGGING')
+    monty3.grid(column=0, row=0, padx=8, pady=4)
+
+    #monty4 = ttk.LabelFrame(page3, text=' NAMES ')
+    #monty4.grid(column=0, row=0, padx=8, pady=4)
 
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
@@ -33,32 +60,51 @@ def read_text():
     
     # Read from file
     raw=f.read()
-    # So maybe in here have a new window that displays file
-    # With option of saving it or just viewing it
-    import tkinter
-    window2= Tk()
-    window2.geometry("900x500")
-    window2.title("Read Local File")
-
-    Results = Label(window2, text = raw)
-    Results.grid(row = 1, column = 1)
     
-    #Passing values by references (goes to print sentence) and passes data there
-    #print_sentence(raw)
-    #print_tokenizer(raw)
+    sentences = nltk.sent_tokenize(raw)
+     #ORIGINAL TEXT
+    totL = ("TOTAL WORDS COUNTS =", len([word for s in sentences for word in s]), "\n")
+    scrolTxt2 = tkst.ScrolledText(monty, width=100, height=30, wrap=tk.WORD)
+    #scrolTxt.grid(column=0, row=3, sticky='WE', columnspan=3)
+    scrolTxt2.grid(column=1,row=3)
+    scrolTxt2.insert(tkinter.INSERT,totL)
+    scrolTxt2.insert(tkinter.INSERT,sentences)
+
+    #WORD TOKENIZED VERESION
+    # print ("TOTAL # OF WORDS =", len([word for s in filtered_sent for word in s]))
+    #print("FILETERED  Sentence:",filtered_sent)
+    wordTokenized = [nltk.word_tokenize(sent) for sent in sentences]
+    totL3=("WORDS TOKENIZED =", len([word for s in wordTokenized for word in s]), "\n") 
+    scrolTxt3 = tkst.ScrolledText(monty2, width=100, height=30, wrap=tk.WORD)
+    scrolTxt3.grid(column=1,row=3)
+    scrolTxt3.insert(tkinter.INSERT,totL3, '\n')
+    scrolTxt3.insert(tkinter.INSERT,wordTokenized)
+    
+    wordTag = [nltk.pos_tag(sent) for sent in wordTokenized]
+    totL3=("WORDS TAGGING =", len([word for s in wordTag  for word in s]), "\n") 
+    scrolTxt3 = tkst.ScrolledText(monty3, width=100, height=30, wrap=tk.WORD)
+    scrolTxt3.grid(column=1,row=3)
+    scrolTxt3.insert(tkinter.INSERT,totL3)
+    scrolTxt3.insert(tkinter.INSERT,wordTag )
     tokens = nltk.word_tokenize(raw)
    #print(tokens)   
     storeData(tokens)
+
+#***************************** END OF READ FROM LOCAL ********************************
+
     
+#***************************** READ FROM WEB *****************************************
 #Read from an online page    
 def read_from_web():
     
     #url= "http://www-personal.umd.umich.edu/~bmaxim/"
-
-    import tkinter
     window3= Tk()
     window3.geometry("900x500")
     window3.title("Read From Web ")
+
+    # This will hide the tk window and exit out of it once program is terminated
+    root = Tk()
+    root.withdraw()
 
     #Info label
     label = Label(window3, text="Enter Web Page URL: ")
@@ -79,30 +125,37 @@ def read_from_web():
         raw= response.read().decode('utf8')
 
         #STRIP OUT HTML
-        from bs4 import BeautifulSoup
         raw= BeautifulSoup(html).get_text()
         tokens = word_tokenize(raw)
 
         #SCROLLTEXT widget
-        import tkinter.scrolledtext as tkst
         scrolTxt = tkst.ScrolledText(window3)
-        scrolTxt.grid(column=1,row=10)
-        scrolTxt.insert(tkinter.INSERT,raw)
-        #
-    
+        #scrolTxt.grid(column=1,row=10)
+        #scrolTxt.insert(tkinter.INSERT,raw)
+  
         #TOKENIZE TEXT
         #Have a second scrollText?? or open in new page?? try new options
-        print_tokenizer(raw)
-        tokens = nltk.word_tokenize(raw)
-   #print(tokens)   
-        storeData(tokens)
+        #print_tokenizer(raw)
+    
+        print("\n----------------WORDS + TAG-----------------------------------\n")
+        sentences = nltk.sent_tokenize(raw)
+        wordTokenized = [nltk.word_tokenize(sent) for sent in sentences]
+        wordTag = [nltk.pos_tag(sent) for sent in wordTokenized]
+        print(wordTag )
+        totL3=("WORDS TAGGING =", len([word for s in wordTag  for word in s]), "\n") 
+        #scrolTxt = tkst.ScrolledText(monty3, width=100, height=30, wrap=tk.WORD)
+        scrolTxt.grid(column=1,row=3)
+        scrolTxt.insert(tkinter.INSERT,totL3)
+        scrolTxt.insert(tkinter.INSERT,wordTag )
+        
+
     #Button to perform url retrieval
     option1Button = Button(window3, text= "GET WEB PAGE", bg="light blue", fg="black", command = strip)
     option1Button.config(height = 1, width = 20)
     option1Button.grid(column=10, row =0)
 
-    #,width=40,height=10
+    print_tokenizer(raw)
+    tokens = nltk.word_tokenize(raw)   
+    storeData(tokens)
+#*******************=************** END OF READ FROM WEB **************************************
     
-    
-
-
