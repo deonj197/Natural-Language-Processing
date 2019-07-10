@@ -1,16 +1,23 @@
+from database import database
 from nltk.probability import FreqDist
 from NLTK_Features.Print_Text import *
-from database import database
-    
 from tkinter import ttk
 import tkinter as tk
+import tkinter
 from tkinter.scrolledtext import ScrolledText
+import nltk
+#Opens file
+from nltk.corpus import PlaintextCorpusReader
+# Open From File GUI
+from tkinter.filedialog import askopenfilename
+#SCROLLTEXT widget
+import tkinter.scrolledtext as tkst
+from nltk.corpus import wordnet
 
+#********************* SENTENCE WORD TAGGING *****************************
 def sentece_word_tag():
     #just have a function that can remember the name of the file, instead of always
     #opening the file
-
-    import tkinter
     window= Tk()
     window.geometry("900x500")
     window.title("WORDS TAGGING FUNCTION")
@@ -35,16 +42,6 @@ def sentece_word_tag():
 
     monty3 = ttk.LabelFrame(page3, text=' WORDS TAGGING')
     monty3.grid(column=0, row=0, padx=8, pady=4)
-
-    
-    import nltk
-    from nltk.corpus import PlaintextCorpusReader
-    
-
-    # Open From File GUI
-    from tkinter.filedialog import askopenfilename
-
-    import tkinter.scrolledtext as tkst
 
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
@@ -91,10 +88,11 @@ def sentece_word_tag():
     scrolTxt3.grid(column=1,row=3)
     scrolTxt3.insert(tkinter.INSERT,totL3)
     scrolTxt3.insert(tkinter.INSERT,wordTag )
+
+#**************************** END OF SENTENCE WORD TAGGING *******************************
            
 
-    #Stats_Menu()
-
+# Safe to get rid of
 def Stats_Menu():
     print("-------------------------------------------------------- -")
     print("                       ANALYTICS                          ")
@@ -120,11 +118,11 @@ def Stats_Menu():
     else:
         #this will be the code if user enters invalid answer, it will take them to main menu
         return "111"
-#Stemming reduces a word to its simpleset form
-#for example driving, drove, would reduce to drive   
+
+#************************************** STEMMING ********************************************
 def stemming():
-    
-    import tkinter
+#Stemming reduces a word to its simpleset form
+#for example driving, drove, would reduce to drive
     window= Tk()
     window.geometry("900x500")
     window.title("STEMMING FUNCTION")
@@ -138,28 +136,13 @@ def stemming():
     nb.add(page2, text='Stemmed Sentence')
  
     nb.pack(expand=1, fill="both")
-   
     monty = ttk.LabelFrame(page1, text='Orignal')
     monty.grid(column=0, row=0, padx=8, pady=4)
-
     monty2 = ttk.LabelFrame(page2, text=' Stemmed ')
     monty2.grid(column=0, row=0, padx=8, pady=4)
     
-    
     from nltk.stem import PorterStemmer
     from nltk.tokenize import sent_tokenize, word_tokenize
-
-    #SCROLLTEXT widget
-    import tkinter.scrolledtext as tkst
-    #scrolTxt = tkst.ScrolledText(window4)
-    #scrolTxt.grid(column=1,row=10)
-    #scrolTxt.insert(tkinter.INSERT,stop_words)
-
-    #Open file
-    from nltk.corpus import PlaintextCorpusReader
-
-    # Open From File GUI
-    from tkinter.filedialog import askopenfilename
 
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
@@ -177,9 +160,6 @@ def stemming():
     stemmed_words=[]
     for w in sentences:
         stemmed_words.append(ps.stem(w))
-                             
-    #print("ORIGINAL Sentencs:",sentences)
-    #print("Stemmed Sentence:",stemmed_words)
 
     #ORIGINAL TEXT
     print ("TOTAL WORDS COUNT = ", len([word for s in sentences for word in s]), "\n")
@@ -201,75 +181,15 @@ def stemming():
     scrolTxt3.grid(column=1,row=3)
     scrolTxt3.insert(tkinter.INSERT,totL3)
     scrolTxt3.insert(tkinter.INSERT,stemmed_words)
-    
-#Open file
-from nltk.corpus import PlaintextCorpusReader
-# Open From File GUI
-from tkinter.filedialog import askopenfilename
 
-#Remove stop words (in english stop words, are words that connect words,
-#but alone give no significant meaning to a sentece
-from tkinter import ttk
-import tkinter as tk
-from tkinter.scrolledtext import ScrolledText
-import tkinter.scrolledtext as tkst
-import nltk
-from nltk.corpus import wordnet
-def Synonym_analysis():
-    import tkinter
-    window5= Tk()
-    window5.geometry("900x500")
-    window5.title("Synonym Analysis")
+#************************************ END STEMMING *************************************
 
-    # String variable in textbox
-    variable = StringVar()
-    
-    nb = ttk.Notebook(window5)
-    page1 = ttk.Frame(nb)
-    nb.add(page1, text='Synonyms')
-    nb.pack(expand=1, fill="both")
-    #monty = ttk.LabelFrame(page1, text=' List ')
-    monty = LabelFrame(window5, text=" List ", padx=5, pady=5)
-    monty.pack(padx=10,pady=10)
-    entry = Entry(monty)
-    entry.pack()     
-
-    def get_text():
-        print(entry.get())
-        syn1 = entry.get()
-        totL = Synonyms(syn1)
-        # Displaying Results     
-        scrolTxt = tkst.ScrolledText(monty, width=100, height=30, wrap=tk.WORD)
-        scrolTxt.insert(tkinter.INSERT,totL)
-        scrolTxt.pack()
-        print(totL)
-        
-    
-
-    def Synonyms(entry):
-        # Synonym analysis portion
-        syn = list()
-        from nltk.corpus import wordnet
-        for synset in wordnet.synsets(entry):
-            for lemma in synset.lemmas():
-                syn.append(lemma.name())#add the synonyms
-        totL = ("Synonyms: " + str(syn))
-        return totL
-
-
-
-    #b = Button(monty, text="OK", fg="red").pack()
-    FunctionCall = Button(monty, text="Enter", command=get_text)
-    FunctionCall.pack()
-
-    window5.mainloop()
-    
+#************************************ STOP WORDS **************************************
 def stop_words():
                              
     #just have a function that can remember the name of the file, instead of always
     #opening the file
 
-    import tkinter
     window4= Tk()
     window4.geometry("900x500")
     window4.title("STOP WORDS FUNCTION")
@@ -302,8 +222,6 @@ def stop_words():
     from nltk.corpus import stopwords
    # stop_words=set(stopwords.words("english"))
 
-    #SCROLLTEXT widget
-    import tkinter.scrolledtext as tkst
     #scrolTxt = tkst.ScrolledText(window4)
     #scrolTxt.grid(column=1,row=10)
     #scrolTxt.insert(tkinter.INSERT,stop_words)
@@ -316,12 +234,6 @@ def stop_words():
 
     print(stop_words)
     print("REMOVING STOP WORDS FROM THE TEXT\n")
-
-    #Open file
-    from nltk.corpus import PlaintextCorpusReader
-
-    # Open From File GUI
-    from tkinter.filedialog import askopenfilename
 
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
@@ -382,17 +294,12 @@ def stop_words():
     scrolTxt4.insert(tkinter.INSERT,missing_words)
 
     window4.mainloop()
-            
-   
+#**************************** END STOP WORDS ****************************************
+
+#*************************** FREQUENCY DISTRIBUTION ****************************
+
 #Will check the word distribution, how often does a particular word occur
 def freq_Dist():
-
-    import nltk
-    from nltk.corpus import PlaintextCorpusReader
-
-    # Open From File GUI
-    from tkinter.filedialog import askopenfilename
-
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
     root.withdraw()
@@ -412,3 +319,52 @@ def freq_Dist():
    #import matplotlib.pyplot as plt
     fdist.plot(30,cumulative=False)
     plt.show()
+#******************************* END FREQUENCY DISTRIBUTION ********************************
+
+### **************************** SYNONYM ANALYSIS **************************
+def Synonym_analysis():
+    window5= Tk()
+    window5.geometry("900x500")
+    window5.title("Synonym Analysis")
+
+    # String variable in textbox
+    # variable = StringVar()
+    
+    nb = ttk.Notebook(window5)
+    page1 = ttk.Frame(nb)
+    nb.add(page1, text='Synonyms')
+    nb.pack(expand=1, fill="both")
+    #monty = ttk.LabelFrame(page1, text=' List ')
+    monty = LabelFrame(window5, text=" List ", padx=5, pady=5)
+    monty.pack(padx=10,pady=10)
+    entry = Entry(monty)
+    entry.pack()     
+    
+    def get_text():
+        print(entry.get())
+        syn1 = entry.get()
+        totL = Synonyms(syn1)
+        # Displaying Results     
+        scrolTxt.delete("1.0",tkinter.END)
+        scrolTxt.insert(tkinter.INSERT,totL)
+        print(totL)
+
+    def Synonyms(entry):
+        # Synonym analysis portion
+        syn = list()
+        from nltk.corpus import wordnet
+        for synset in wordnet.synsets(entry):
+            for lemma in synset.lemmas():
+                syn.append(lemma.name())#add the synonyms
+        totL = ("Synonyms: " + str(syn))
+        return totL
+
+    #b = Button(monty, text="OK", fg="red").pack()
+    FunctionCall = Button(monty, text="Enter", command=get_text)
+    scrolTxt = tkst.ScrolledText(monty, width=100, height=30, wrap=tk.WORD)
+    FunctionCall.pack()
+    scrolTxt.pack()
+
+    window5.mainloop()
+#*********************************END SYNONYM ANALYSIS********************************
+    
