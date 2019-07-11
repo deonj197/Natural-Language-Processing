@@ -1,12 +1,19 @@
+from database import database
 import nltk
 from nltk import word_tokenize
 from urllib import request
 from bs4 import BeautifulSoup
 from nltk.tokenize import PunktSentenceTokenizer, sent_tokenize
-from database import database
 from NLTK_Features.Print_Text import *
-
+from tkinter import ttk
+import tkinter as tk
+from tkinter.scrolledtext import ScrolledText 
+from nltk.corpus import PlaintextCorpusReader  
+# Open From File GUI
+from tkinter.filedialog import askopenfilename
+import tkinter.scrolledtext as tkst
 from tkinter import *
+import tkinter
 
 #Reads from inputted txt file
 def read_from_book():
