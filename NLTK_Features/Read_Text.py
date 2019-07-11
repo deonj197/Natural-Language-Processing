@@ -14,13 +14,38 @@ from tkinter.filedialog import askopenfilename
 import tkinter.scrolledtext as tkst
 from tkinter import *
 import tkinter
+from nameparser.parser import HumanName # pip install nameparser
+from nltk.corpus import wordnet
 
-#Reads from inputted txt file
+#Reads from inputted txt file -------- Safe to remove ----------
 def read_from_book():
     raw = "is an 1851 novel by American writer Herman Melville. The book is sailor Ishmael's narrative of the obsessive quest of Ahab captain of the whaling ship Pequod for revenge on Moby Dick. the white whale that on the ship's previous voyage bit off Ahab's. leg at the knee. A contribution to the literature of the. American Renaissance. the work's genre classifications range from late Romantic to early Symbolist. Moby-Dick was published to mixed reviews was a commercial. failure and was out of print at the time of the. author's death in 1891. Its reputation as a Great American Novel was established only in the 20th century, after the centennial of its author's birth. William Faulkner confessed he wished he had written the book himself"
     raw2 = sent_tokenize(raw)
     print(raw2)
 
+#************************** NAME PARSER ************************
+person_list = []
+person_names = person_list
+
+def get_human_names(text):
+    tokens = nltk.tokenize.word_tokenize(text)
+    pos = nltk.pos_tag(tokens)
+    sentt = nltk.ne_chunk(pos, binary = False)
+
+    person = []
+    name = ""
+    for subtree in sentt.subtrees(filter=lambda t: t.label() == 'PERSON'):
+        for leaf in subtree.leaves():
+            person.append(leaf[0])
+        if len(person) > 1: #avoid grabbing lone surnames
+            for part in person:
+                name += part + ' '
+            if name[:-1] not in person_list:
+                person_list.append(name[:-1])
+            name = ''
+        person = []
+
+    return (person_list)
 
 #****************************** READ FROM LOCAL FILE **************************************
 #Read from local directory
@@ -41,7 +66,7 @@ def read_text():
     nb.add(page1, text = 'Sentence tokenization')
     nb.add(page2, text= 'Word tokenization')
     nb.add(page3, text='WORDS TAGGING')
-    #nb.add(page4, test='Names')
+    nb.add(page4, text='Names')
 
     nb.pack(expand=1, fill="both")
    
@@ -54,8 +79,8 @@ def read_text():
     monty3 = ttk.LabelFrame(page3, text=' WORDS TAGGING')
     monty3.grid(column=0, row=0, padx=8, pady=4)
 
-    #monty4 = ttk.LabelFrame(page3, text=' NAMES ')
-    #monty4.grid(column=0, row=0, padx=8, pady=4)
+    monty4 = ttk.LabelFrame(page4, text=' NAMES ')
+    monty4.grid(column=0, row=0, padx=8, pady=4)
 
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
@@ -96,6 +121,20 @@ def read_text():
     tokens = nltk.word_tokenize(raw)
    #print(tokens)   
     storeData(tokens)
+
+    names = get_human_names(raw)
+    for person in person_list:
+        person_split = person.split(" ")
+        for name in person_split:
+            if wordnet.synsets(name):
+                if(name in person):
+                    person_names.remove(person)
+                    break
+
+    print(person_names)
+    scrolTxt4 = tkst.ScrolledText(monty4, width=100, height=30)
+    scrolTxt4.grid(column=1,row=3)
+    scrolTxt4.insert(tkinter.INSERT,person_names)
 
 #***************************** END OF READ FROM LOCAL ********************************
 
