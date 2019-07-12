@@ -28,8 +28,10 @@ person_list = []
 person_names = person_list
 
 def get_human_names(text):
+    #Tokenize and Tag the text
     tokens = nltk.tokenize.word_tokenize(text)
     pos = nltk.pos_tag(tokens)
+    #
     sentt = nltk.ne_chunk(pos, binary = False)
 
     person = []
@@ -61,7 +63,7 @@ def read_text():
     page1 = ttk.Frame(nb)
     page2 = ttk.Frame(nb)
     page3 = ttk.Frame(nb)
-    #page4 = ttk.Frame(nb)
+    page4 = ttk.Frame(nb)
     
     nb.add(page1, text = 'Sentence tokenization')
     nb.add(page2, text= 'Word tokenization')
@@ -128,8 +130,17 @@ def read_text():
         for name in person_split:
             if wordnet.synsets(name):
                 if(name in person):
-                    person_names.remove(person)
+                    #person_names.remove(person)
                     break
+
+    for person in person_names:
+        nameTag = person.split()
+        firstName = nameTag[0]
+        lastName = nameTag[1]
+        insertPerson = (firstName,lastName,0)
+        cursor.execute('''INSERT INTO PODS_DB_1.dbo.Person (NameFirst, NameLast, Title)VALUES(?,?,?) ''' , insertPerson)
+        conn.commit()
+
 
     print(person_names)
     scrolTxt4 = tkst.ScrolledText(monty4, width=100, height=30)
