@@ -149,26 +149,67 @@ def read_text():
 
 #***************************** END OF READ FROM LOCAL ********************************
 
-    
 #***************************** READ FROM WEB *****************************************
 #Read from an online page    
 def read_from_web():
     
     #url= "http://www-personal.umd.umich.edu/~bmaxim/"
     window3= Tk()
-    window3.geometry("900x500")
+    window3.geometry("1000x500")
     window3.title("Read From Web ")
+
+    person_list = []
+    person_names = person_list
 
     # This will hide the tk window and exit out of it once program is terminated
     root = Tk()
     root.withdraw()
 
+
+    person_list = []
+    person_names = person_list
+#************************** NAME PARSER ************************
+    def get_human_names(text):
+        tokens = nltk.tokenize.word_tokenize(text)
+        pos = nltk.pos_tag(tokens)
+        sentt = nltk.ne_chunk(pos, binary = False)
+
+        person = []
+        name = ""
+        for subtree in sentt.subtrees(filter=lambda t: t.label() == 'PERSON'):
+            for leaf in subtree.leaves():
+                person.append(leaf[0])
+            if len(person) > 1: #avoid grabbing lone surnames
+                for part in person:
+                    name += part + ' '
+                if name[:-1] not in person_list:
+                    person_list.append(name[:-1])
+                name = ''
+            person = []
+        return (person_list)
+
+
+    nb = ttk.Notebook(window3)
+    page1 = ttk.Frame(nb)
+    page2 = ttk.Frame(nb)
+
+    nb.add(page1, text = 'Tokenized Website')
+    nb.add(page2, text= ' Name Parser ')
+
+    nb.pack(expand=1, fill="both")
+   
+    monty = ttk.LabelFrame(page1, text=' Tokenized Website ')
+    monty.grid(column=0, row=0, padx=8, pady=4)
+    monty2 = ttk.LabelFrame(page2, text=' Name Parser ')
+    monty2.grid(column=0, row=0, padx=8, pady=4)
+   
+
     #Info label
-    label = Label(window3, text="Enter Web Page URL: ")
+    label = Label(page1, text="Enter Web Page URL: ")
     label.grid(column = 0, row = 0)
 
     #User Input
-    txt = Entry(window3,width=50)
+    txt = Entry(page1,width=50)
     txt.grid(column = 1, row =0)
     txt.focus()
 
@@ -186,9 +227,7 @@ def read_from_web():
         tokens = word_tokenize(raw)
 
         #SCROLLTEXT widget
-        scrolTxt = tkst.ScrolledText(window3)
-        #scrolTxt.grid(column=1,row=10)
-        #scrolTxt.insert(tkinter.INSERT,raw)
+        scrolTxt = tkst.ScrolledText(page1)
   
         #TOKENIZE TEXT
         #Have a second scrollText?? or open in new page?? try new options
@@ -201,18 +240,33 @@ def read_from_web():
         print(wordTag )
         totL3=("WORDS TAGGING =", len([word for s in wordTag  for word in s]), "\n") 
         #scrolTxt = tkst.ScrolledText(monty3, width=100, height=30, wrap=tk.WORD)
-        scrolTxt.grid(column=1,row=3)
+        scrolTxt.grid(column=1,row=4)
         scrolTxt.insert(tkinter.INSERT,totL3)
         scrolTxt.insert(tkinter.INSERT,wordTag )
-        
 
+        names = get_human_names(raw)
+        for person in person_list:
+            person_split = person.split(" ")
+            for name in person_split:
+                if wordnet.synsets(name):
+                    if(name in person):
+                        #person_names.remove(person)
+                        break
+        print(person_names)
+        scrolTxt2 = tkst.ScrolledText(monty2, width=100, height=30, wrap=tk.WORD)
+        scrolTxt2.grid(column=1,row=3)
+        scrolTxt2.insert(tkinter.INSERT, person_names)
+        
     #Button to perform url retrieval
-    option1Button = Button(window3, text= "GET WEB PAGE", bg="light blue", fg="black", command = strip)
+    option1Button = Button(page1, text= "GET WEB PAGE", bg="light blue", fg="black", command = strip)
     option1Button.config(height = 1, width = 20)
     option1Button.grid(column=10, row =0)
 
-    print_tokenizer(raw)
-    tokens = nltk.word_tokenize(raw)   
-    storeData(tokens)
+
+
+    
 #*******************=************** END OF READ FROM WEB **************************************
     
+
+    
+
